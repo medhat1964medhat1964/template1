@@ -1,0 +1,512 @@
+
+/* Start Variables for css */
+:root {
+  --main-color: #10cab7;
+  --secondary-color: #2c4755;
+  --section-padding: 60px;
+  --section-background: #f6f6f6;
+  --main-duration: 0.5s;
+}
+/* End Variables */
+/* Start Global Rules */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+/* وضع طبيعة التنقل لأجزاء الصفحة */
+html {
+  scroll-behavior: smooth; 
+}
+/* وضع التنسيقات العامة لكامل الصفحة */
+body {
+  font-family: "Work Sans", sans-serif;
+  background-color: #10cab7;
+}
+/* End Global Rules */
+
+/* Start Header */
+
+/*  عمل ديف لعنصر الهيدر الحاوي الذي يضم باقي عناصر الهيدر الذي يضم بدوره
+ عنصر اللوجو وعنصر لينكس الحاوي للينكات التوجه الأربعه  */
+ 
+.header {
+  height: 50px;
+  width: 100%;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* تنسيقات   صورة أو عنصر اللوجو */
+ .logo {
+ height: 40px; 
+ width: 50px;
+}
+
+
+/* عمل تنسيقات لرسم هيكل أيقونة مكونة من أربعة خطوط (أربعة اسبان) تنبثق منها لينكات التوجه الأربعة */
+/*  التنسيق العام لهيكل الأيقونة */
+/* أي التنسيق العام للكونتينر الحاوي لمكونات هيكل الأيقونة */
+  .icon {
+  width: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+/* التنسيق العام لكل خط أو لكل اسبان من الخطوط الثلاثة أو الاسبانات الثلاثة */
+/* التنسيق العام للخطوط أو الاسبانات ككل */
+ .icon span {
+  background-color: blue;
+  margin-bottom: 5px;
+  height: 3px;
+}
+
+/* التنسيق الفردي لكل خط أو اسبان على حده */
+/* تنسيق الخط الأول أو الاسبان الأول من الأيقونة */
+.icon span:first-child {
+  width: 30px;
+}
+
+/* تنسيق الخط الثاني أو الاسبان الثاني من الأيقونة */
+.icon span:nth-child(2) {
+  width: 20px;
+}
+
+/* عمل هوفر للخط الثاني */
+.icon span:nth-child(2):hover {
+  background-color: red;
+  width: 30px;
+  transition: 0.5s;
+}
+
+/* تنسيق الخط الثالث أو الاسبان الثالث من الأيقونة */
+.icon span:nth-child(3) {
+  width: 20px;
+}
+
+/* عمل هوفر للخط الثالث */
+.icon span:nth-child(3):hover {
+  background-color: red;
+  width: 30px;
+  transition: 0.5s;
+}
+
+/* تنسيق الخط الرابع أو الاسبان الرابع من الأيقونة */
+ .icon  span:last-child {
+  width: 30px;
+}
+
+/* وضع بوزيشن ريلاتيف كتنسيق عام  لعنصر لينكس الحاوي */
+.links {
+  position: relative;
+}
+
+/* التنسيقات العامة لقائمة اللينكات يو ال */
+ .links ul {
+  position: absolute;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  right: 0;
+  top: calc(100% + 8px);
+  background-color: #f6f6f6;
+  border: 1px solid blue;
+  width: 200px;
+  z-index: 1;  
+  /* اخفاء قائمة اللينكات */
+  display: none;
+}
+
+/* تنسيقات عمل سهم لقائمة اللينكات يو ال (بيفور) */
+.links ul::before {
+  content: "";
+  position: absolute;
+  border-width: 10px;
+  border-style: solid;
+  border-color: transparent transparent blue transparent;
+  right: 5px;
+  top: -20px;
+}
+
+/* وضع هوفر على قائمة اللينكات يو ال لاظهارها عند وضع السهم على أيقونة اللينكات   */
+.links:hover ul {
+  display: block;
+}
+
+/* تنسيقات عناصر قائمة اللينكات  يو ال ال آي */
+.links ul li a {
+  padding: 15px;
+  transition: 0.5s;
+  text-decoration: none;
+  color: blue;
+  display: block;
+  border-bottom: 1px solid blue;
+}
+ 
+/* وضع هوفر على عناصر قائمة اللينكات لتحريكها لجهة اليمين بمقدار 75 بيكسل بسرعة خمسة من عشرة اس واعطار العنصر باك جراوند كلر */
+.links ul li a:hover  {
+  padding-left: 75px;
+  transition: 0.5s;
+  background-color: #10cab7;
+}
+
+/* End Header */
+
+/* Start intro1 Section */
+.intro1 {
+/* استدعاء الصورة من خلال السي اس اس كأحد تنسيقات العنصر وكباك جراوند اميج له ثم اضافة تنسيقات لهذه الصورة كخلفية كما يلي
+وذلك بديلا عن استدعاءها من خلال الاتش تي ام ال وذلك بعنصر امج كما هو معتاد ومعروف */
+  background-image: url(../images/intro-img.png);
+  background-size: cover;
+  height: calc(100vh - 64px);
+  position: relative;
+  max-width: 100%;
+  text-align: center;
+}
+
+.intro1 .intro1-text {
+  /* تنسيقات النص في الانترو 1 */
+  position: absolute;
+  left: 50%;
+  top: 15%;
+  transform: translate(-50%, -50%);
+  width: 320px;
+  margin: auto;
+}
+   /* تنسيقات العنوان في الانترو 1  */
+.intro1 .intro1-text h1 {
+  margin: 0;
+  font-weight: bold;
+  font-size: 50px;
+  color: blue;
+}
+
+  /* تنسيقات الفقرة في الانترو 1 */
+.intro1 .intro1-text p {
+  font-size: 19px;
+  font-weight: bold;
+  line-height: 1.8;
+}
+/* End intro1 Section */
+
+/* Start intro2 section */
+.intro2 {
+  /* خاصية توزيع ثلاثة عناصر بالمحتوى الحاوي لهم انترو2 كل منها بعرض 350 بيكسيل على عرض الصفحة (أعمدة الصفحة) 
+  بحيث تكون المسافة البينية بين العناصر الثلاثة هي 20 بيكسيل */
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  grid-gap: 20px;
+}
+.intro2 .intro21 {
+  /* التنسيقات العامة لعناصر الديف الحاوي الثلاثة ذو الكلاس انترو21 في الانترو 2 */
+  padding: 60px;
+  
+  
+}
+/* التنسيق الخاص بالأيقونة وهو اللون */
+.intro2 .intro21 i {
+  color: blue;
+  padding-left: 100px;
+}
+/* التنسيق الخاص بالعنوان */
+.intro2 .intro21 h3 {
+  font-weight: 800;
+  margin: 20px 0;
+  
+}
+/* التنسيق الخاص بالفقرة */
+.intro2 .intro21 p {
+  line-height: 1.5;
+  font-size: 17px;
+}
+/* End intro2 section */
+
+  /* Start services Section */
+
+.services {
+  padding: 20px;
+  margin: 0;
+  text-align: center;
+}
+/* تنسيق عنصر العنوان بديف الكلاس سيرفيسس */
+.services h2 {
+  font-size: 70px;
+  color: blue;
+  margin: 0;
+}
+/* تنسيق عنصر باراجراف بديف الكلاس سيرفيسس */
+.services p {
+  font-size: 15px;
+  margin-top: -15px;
+}
+/* وضع التنسيقات العامة لديف الكلاس كولمنس وهو الديف الحاوي لعناصر الأعمدة الثلاثة */
+.columns { 
+  display: flex;
+  flex-direction: column;
+  padding-left:15px;
+  padding-right:15px;
+}
+/* وضع خاصية توزيع عناصر الأعمدة الثلاثة على أعمدة الصفحة من خلال كلاسها كولمنس */
+ .columns {
+  display: grid;
+  grid-template-columns: repeat( auto-fill, minmax(350px, 1fr));
+  grid-gap: 60px; 
+ }
+/* وضع تنسيقات الأيقونات في العمود الأول والعمود الثاني */
+.columns .column1 i,
+.columns .column2 i {
+  color: blue;
+  flex-basis: 60px;
+}
+/* وضع تنسيقات العناوين في العمود الأول والعمود الثاني */
+.columns .column1 h3,
+.columns .column2  h3 {
+  padding: 20px;
+  flex: 1;
+  display: inline;
+}
+/* وضع تنسيقات الباراجرافات في العمود الأول والعمود الثاني */
+.columns .column1 p,
+.columns .column2 p {
+  text-align: left;
+  font-weight: 300;
+  line-height: 1.6;
+  width: 50%;
+  flex: 1;
+}
+/* وضع تنسيقات الديف الحاوي لعنصر الصورة من خلال كلاسه كولمن3 */
+.columns .column3 {
+  position: relative;
+  width: 350px;
+  height: 80%;
+}
+/* وضع تنسيق عنصر الصورة */
+ .columns .column3 img {
+  width: 300px;
+  height: 400px;
+  padding-top: 30px;
+}
+/* وضع تنسيقات لعمل محتوى بعد الصورة وتنسيقه كما يلي */
+.columns .column3::before {
+  content: "";
+  background-color: blue;
+  width: 150px;
+  height: 117%;
+  position: absolute;
+  right: 0;
+  z-index: -1;
+}
+
+  /* End services Section */
+
+  /* Start portfolio Section */
+  /* عمل التنسيقات العامة للديف الحاوي لعنوان قسم البورتفوليو والعباره التي بأسفله  */
+  .portfolio {
+    padding: 50px;
+    margin: 0;
+    text-align: center;
+  }
+/* تنسيق عنصر العنوان من خلال الكلاس  التالي والخاص به */
+.portfolio h2 {
+    font-size: 70px;
+    color: blue;
+    margin: 0;
+  }
+  /* تنسيق عنصر باراجراف من خلال الكلاس التالي والخاص به */
+  .portfolio p {
+    font-size: 15px;
+    margin-top: -15px;
+  }
+  
+/* وضع التنسيقات العامة للديف ذو الكلاس بورتفوليو-كولمنس وهو الديف الحاوي لعناصر الأعمدة الثلاثة */
+
+  
+/* وضع خاصية توزيع عناصر الأعمدة الثلاثة على أعمدة الصفحة من خلال كلاسها كولمنس */
+.portfolio-columns {
+    display: grid;
+    grid-template-columns: repeat( auto-fill, minmax(350px, 1fr));
+    grid-gap: 65px; 
+    padding-left: 25px;
+    padding-right: 15px;
+   }
+
+/* وضع تنسيقات الباراجرافات في العمود الأول والعمود الثاني */
+.portfolio-columns .column1 p,
+.portfolio-columns .column2 p,
+.portfolio-columns .column3 p {
+  text-align: left;
+  font-weight: 300;
+  line-height: 1.6;
+  width: 50%;
+  
+}
+    /* End portfolio Section */
+
+  /* Start about Section */
+  /* عمل التنسيقات العامة للديف الحاوي لعنوان قسم أباوت والعباره التي بأسفله  */
+  .about {
+    padding-top: 50px;
+    margin: 0;
+    text-align: center;
+  }
+/* تنسيق عنصر العنوان من خلال الكلاس  التالي والخاص به */
+.about h2 {
+    font-size: 70px;
+    color: blue;
+    margin: 0;
+  }
+  /* تنسيق عنصر باراجراف من خلال الكلاس التالي والخاص به */
+  .about p {
+    font-size: 15px;
+    margin-top: -15px;
+  }
+  /* وضع التنسيقات العامة للديف أوالعنصر الحاوي للعناصر ذو الكلاس أبوات-كونتانت 
+  أو بالأحرى وضع تنسيق المحتوى والتنسيقات المشتركة لعناصر المحتوى */
+  .about-content {
+    margin-top: 40px;
+    padding: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  /* وضع التنسيقات العامة للديف أوالعنصر الحاوي لعنصر الصورة ذو الكلاس أبوات-مونتانت اميج  */
+    .about-content .image {
+      position: relative;
+      width: 250px;
+      height: 375px;
+    }
+    /* وضع تنسيقات لاضافةالمحتوى بيفور قبل المحتوى ذو الكلاس أبوات-مونتانت اميج */
+    .about-content .image::before {
+      content: "";
+      position: absolute;
+      background-color: blue ;
+      width: 80px;
+      height: calc(100% + 75px);
+      top: -35px;
+      left: -15px;
+      z-index: -1;
+    }
+
+    /* وضع تنسيقات لاضافةالمحتوى أفتر بعد المحتوى ذو الكلاس أبوات-مونتانت اميج */
+    .about-content .image::after {
+            content: "";
+      position: absolute;
+      width: 120px;
+      height: 300px;
+      border-left: 80px solid gray;
+      border-bottom: 80px solid gray;
+      z-index: -1;
+      right: -143px;
+      top: -35px;
+          }
+/* وضع تنسيق لعرض الصورة */
+    .about-content .image img {
+      max-width: 102%;
+    }
+
+      /* وضع التنسيقات العامة للديف أوالعنصر الحاوي لعنصري الباراجراف والخظ الفاصل بينهما ذو الكلاس أبوات-كونتانت تكست  */
+      /* أو بالأحرى وضع تنسيق المحتوى والتنسيقات المشتركة لعناصر المحتوى */
+     .about-content .text {
+      flex-basis: calc(100% - 500px);
+      flex: 0.85;
+      line-height: 1.6;
+    }
+    
+    /* تنسيق العنصر اتش آر من المحتوى تكست */
+    .about-content .text hr {
+border: 2px solid blue;
+width: 100%;
+    }
+    
+  /* End about Section */
+
+  /* Start contact Section */
+  /* عمل التنسيقات العامة للديف الحاوي لعنوان قسم كونتاكت والعباره التي بأسفله  */
+  .contact {
+    padding: 40px;
+    margin: 0;
+    text-align: center;
+  }
+/* تنسيق عنصر العنوان من خلال الكلاس  التالي والخاص به */
+.contact h2 {
+    font-size: 70px;
+    color: blue;
+    margin: 0;
+  }
+
+  /* تنسيق عنصر باراجراف من خلال الكلاس التالي والخاص به */
+  .contact p {
+    font-size: 15px;
+    margin-top: -15px;
+  }
+   
+.contact .info {
+padding: 40px;
+text-align: center;
+justify-content: center;
+  }
+
+.contact .info .label {
+font-size: 20px;
+font-weight: 800;
+color: var(--secondary-color);
+letter-spacing: -2px;
+margin-bottom: 15px;
+  }
+
+.contact .info .link {
+display: block;
+font-size: 30px;
+font-weight: 800;
+color: blue;
+text-decoration: none;
+  }
+
+.contact .info .social {
+display: flex;
+justify-content: center;
+margin-top: 20px;
+font-size: 16px;
+  }
+
+.contact .info .social i {
+color: red;
+margin-left: 10px;
+  }
+  
+
+ /* End contact Section */
+
+ /* Start footer Section */
+
+.footer {
+    background-color: var(--secondary-color);
+    text-align: center;
+    height: 80px;
+    line-height: 80px;
+    color: white;
+    font-size: 18px;
+
+}
+.footer span {
+    font-weight: bold;
+    color: var(--main-color);
+}
+  /* End footer Section */
+
+
+
+
+
+
+
+  
+
+  
